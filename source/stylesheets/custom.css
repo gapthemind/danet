@@ -1,0 +1,14 @@
+body {
+  padding-top: 50px;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
