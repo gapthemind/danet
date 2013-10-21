@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
-    <meta content='Web Pages for Diego Alonso' name='description'>
-    <meta content='Diego Alonso' name='author'>
-    <link href='../../assets/ico/favicon.png' rel='shortcut icon'>
-    <title>Diego Alonso</title>
-    <!-- Bootstrap core CSS -->
-    <link href='stylesheets/bootstrap.css' rel='stylesheet'>
-    <link href='stylesheets/custom.css' rel='stylesheet'>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class='container'>
-      <p>!! is the last command. So</p>
-      
-      <p>$ ls /tmp/</p>
-      
-      <p>$ !!file # Becomes ls /tmp/file</p>
-      
-      <p>$! is the last argument</p>
-      
-      <p>Can be augmented like</p>
-      
-      <p>$ cat $!/file</p>
-    </div>
-    <script src='javascripts/jquery.js'></script>
-    <script src='javascripts/bootstrap.min.js'></script>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='Web Pages for Diego Alonso' name='description'>
+<meta content='Diego Alonso' name='author'>
+<link href='../../assets/ico/favicon.png' rel='shortcut icon'>
+<title>Diego Alonso</title>
+<!-- Bootstrap core CSS -->
+<link href='stylesheets/bootstrap.css' rel='stylesheet'>
+<link href='stylesheets/custom.css' rel='stylesheet'>
+<link href='stylesheets/code.css' rel='stylesheet'>
+<script src='//use.edgefonts.net/muli.js'></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="../../assets/js/html5shiv.js"></script>
+<script src="../../assets/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class='container'>
+<h1>ZShell notes</h1>
+<p>This page contains notes about ZShell</p>
+<p>Last command with !!</p>
+<pre class="highlight shell"><span class="gp">$ </span>ls /tmp/&#x000A;<span class="gp">$ </span>!!file <span class="c"># Becomes ls /tmp/file</span>&#x000A;</pre><p>$! is the last argument from the previous command</p>
+<pre class="highlight shell"><span class="gp">$ </span>ls /tmp/&#x000A;<span class="gp">$ </span>cat <span class="nv">$!</span>/file <span class="c"># appends /file to last argument</span>&#x000A;</pre>
+</div>
+<script src='javascripts/jquery.js'></script>
+<script src='javascripts/bootstrap.min.js'></script>
+</body>
 </html>
