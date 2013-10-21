@@ -20,10 +20,9 @@
 # page "/path/to/file.html", :layout => :otherlayout
 #
 # A path which all have the same layout
-with_layout :markdown do
-  page "/zsh.html.haml"
-end
+activate :syntax
 
+set :haml, { ugly: true }
 # Proxy pages (http://middlemanapp.com/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }

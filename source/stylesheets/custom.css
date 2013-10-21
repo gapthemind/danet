@@ -1,5 +1,9 @@
 body {
   padding-top: 50px;
+  font-family: muli, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.6;
 }
 
 .container {

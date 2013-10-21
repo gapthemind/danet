@@ -1,0 +1,15 @@
+%h1 ZShell notes
+%p This page contains notes about ZShell
+%p Last command with !!
+= preserve do
+  = code('shell') do
+    :plain
+      $ ls /tmp/
+      $ !!file # Becomes ls /tmp/file
+%p $! is the last argument from the previous command
+= preserve do
+  = code('shell') do
+    :plain
+      $ ls /tmp/
+      $ cat $!/file # appends /file to last argument
+
