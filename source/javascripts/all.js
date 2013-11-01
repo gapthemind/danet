@@ -1,1 +1,3 @@
-//= require_tree .
+$$('body').tap(function() {
+  alert("tapped");
+});

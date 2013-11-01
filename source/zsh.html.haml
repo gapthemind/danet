@@ -1,4 +1,4 @@
-%h1 ZShell notes
+%h1 Unix and zshell notes
 %p This page contains notes about ZShell
 %p Last command with !!
 = preserve do
@@ -12,4 +12,28 @@
     :plain
       $ ls /tmp/
       $ cat $!/file # appends /file to last argument
+%p Remeber that > overwrites and >> appends
+
+ZShell for loop
+= preserve do
+  = code('shell') do
+    :plain
+       $ for file in *
+       for> do
+       for>   echo $file
+       for> end
+or
+= preserve do
+  = code('shell') do
+    :plain
+       $ for file in *
+       for> echo $file
+and output can be redirected:
+= preserve do
+  = code('shell') do
+    :plain
+      $ for file in *
+      for> do
+      for>   echo $file
+      for> done | sort > /tmp/hi
 
