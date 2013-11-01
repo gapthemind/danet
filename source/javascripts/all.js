@@ -1,3 +1,3 @@
-$$('p').tap(function() {
+$$('p').drag(function() {
   alert("tapped");
 });
