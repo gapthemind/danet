@@ -15,18 +15,24 @@
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 <script src="../../assets/js/html5shiv.js"></script>
-<script src="../../assets/js/respond.min.js"></script>
+<script src="../../assets/js/html5shiv.js"></script>
 <![endif]-->
 </head>
 <body>
 <div class='container'>
-<h1>ZShell notes</h1>
+<h1>Unix and zshell notes</h1>
 <p>This page contains notes about ZShell</p>
 <p>Last command with !!</p>
 <pre class="highlight shell"><span class="gp">$ </span>ls /tmp/&#x000A;<span class="gp">$ </span>!!file <span class="c"># Becomes ls /tmp/file</span>&#x000A;</pre><p>$! is the last argument from the previous command</p>
-<pre class="highlight shell"><span class="gp">$ </span>ls /tmp/&#x000A;<span class="gp">$ </span>cat <span class="nv">$!</span>/file <span class="c"># appends /file to last argument</span>&#x000A;</pre>
+<pre class="highlight shell"><span class="gp">$ </span>ls /tmp/&#x000A;<span class="gp">$ </span>cat <span class="nv">$!</span>/file <span class="c"># appends /file to last argument</span>&#x000A;</pre><p>Remeber that > overwrites and >> appends</p>
+ZShell for loop
+<pre class="highlight shell"> <span class="nv">$ </span><span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>&#x000A; <span class="k">for</span>&gt; <span class="k">do&#x000A; for</span>&gt;   <span class="nb">echo</span> <span class="nv">$file</span>&#x000A; <span class="k">for</span>&gt; end&#x000A;</pre>or
+<pre class="highlight shell"> <span class="nv">$ </span><span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>&#x000A; <span class="k">for</span>&gt; <span class="nb">echo</span> <span class="nv">$file</span>&#x000A;</pre>and output can be redirected:
+<pre class="highlight shell"><span class="gp">$ </span><span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>&#x000A;<span class="k">for</span>&gt; <span class="k">do&#x000A;for</span>&gt;   <span class="nb">echo</span> <span class="nv">$file</span>&#x000A;<span class="k">for</span>&gt; <span class="k">done</span> | sort &gt; /tmp/hi&#x000A;</pre>
 </div>
 <script src='javascripts/jquery.js'></script>
 <script src='javascripts/bootstrap.min.js'></script>
+<script src='javascripts/quo.js'></script>
+<script src='javascripts/all.js'></script>
 </body>
 </html>
