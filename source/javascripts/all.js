@@ -1,3 +1,1 @@
-$$('p').drag(function() {
-  alert("tapped");
-});
+jQuery('body').bind('taptwo',log);
