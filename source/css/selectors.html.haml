@@ -1,2 +1,129 @@
-.row
-  %h1 Selector Cheatsheet
+%h1 Selector Cheatsheet
+%h3 Element selector
+Use the name of the element
+= preserve do
+  = code('css') do
+    :plain
+      ul { ... }
+Matches all ul's in the document, like:
+= preserve do
+  = code('html') do
+    :plain
+      <ul>
+        <li>Bod Dylan</li>
+        <li>Mark Knopfler</li>
+      </ul>
+%h3 Class selector
+Declared with a dot followed by the id name
+= preserve do
+  = code('css') do
+    :plain
+      .notes { ... }
+= preserve do
+  = code('html') do
+    :plain
+      <div class="notes">
+      </div>
+%h3 Id selector
+Declared with a hash followed by the id name
+= preserve do
+  = code('css') do
+    :plain
+      #song { ... }
+= preserve do
+  = code('html') do
+    :plain
+      <div id="song">
+      </div>
+.alert.alert-info
+  %b Note:
+  To be used sparingly. Very high specifity.
+
+%h3 Descendant Combinator selector
+Allows you to select descendants of a particular element. First specify the parent, followed
+by a space and the child elements to be selected. They do not need to be direct descendants
+= preserve do
+  = code('css') do
+    :plain
+      #song ul { ... } 
+= preserve do
+  = code('html') do
+    :plain
+      <div id="song">
+          <div>
+            <ul>...</ul>
+          </div>
+      </div>
+.alert.alert-info
+  %b Note:
+  To be used sparingly. Makes styles difficult to reuse
+
+%h3 Child Combinator selector
+Allows you to select
+%em direct descendants
+of a particular element. First specify the parent, followed
+by a greather-than and the child elements to be selected. They do not need to be direct descendants
+= preserve do
+  = code('css') do
+    :plain
+      #song > ul { ... } 
+= preserve do
+  = code('html') do
+    :plain
+      <div id="song">
+        <ul>...</ul>
+      </div>
+%h3 General Sibling Combinator selector
+Select siblings (at the same level) of an specific element. Use tilde to separate the element whose siblings
+we want to select, and the siblings.
+= preserve do
+  = code('css') do
+    :plain
+      h1 ~ p { ... } 
+= preserve do
+  = code('html') do
+    :plain
+      <h1>Title</h1>
+      <p>Paragraph</p>
+%h3 Adjacent Sibling Combinator selector
+Select adjacent siblings of an specific element. Use plus to separate the element whose siblings
+we want to select, and the siblings.
+= preserve do
+  = code('css') do
+    :plain
+      h1 + p { ... } 
+= preserve do
+  = code('html') do
+    :plain
+      <h1>Title</h1>
+      <p>Paragraph</p>
+%h3 Attribute selector
+Select elements with a given attribute
+= preserve do
+  = code('css') do
+    :plain
+      input[type='submit'] { ... }
+= preserve do
+  = code('html') do
+    :plain
+      <input type="submit">
+%h3 Pseudo class selector
+= preserve do
+  = code('css') do
+    :plain
+      a:hover { ... }
+%h3 Pseudo elements selector
+= preserve do
+  = code('css') do
+    :plain
+      h2:after
+%h3 Selector chain
+= preserve do
+  = code('css') do
+    :plain
+      h1.banner
+%h3 Multiple selectors in a single declaration
+= preserve do
+  = code('css') do
+    :plain
+      h1, h2, h3 { ... }
