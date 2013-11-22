@@ -5,12 +5,11 @@
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <meta content='Web Pages for Diego Alonso' name='description'>
 <meta content='Diego Alonso' name='author'>
-<link href='../../assets/ico/favicon.png' rel='shortcut icon'>
 <title>Diego Alonso</title>
 <!-- Bootstrap core CSS -->
-<link href='stylesheets/bootstrap.css' rel='stylesheet'>
-<link href='stylesheets/custom.css' rel='stylesheet'>
-<link href='stylesheets/code.css' rel='stylesheet'>
+<link href='/stylesheets/bootstrap.css' rel='stylesheet'>
+<link href='/stylesheets/custom.css' rel='stylesheet'>
+<link href='/stylesheets/code.css' rel='stylesheet'>
 <script src='//use.edgefonts.net/muli.js'></script>
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -20,14 +19,46 @@
 </head>
 <body>
 <div class='container'>
-<div class='row'>
 <h1>Selector Cheatsheet</h1>
+<h3>Element selector</h3>
+Use the name of the element
+<pre class="highlight css"><span class="nt">ul</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre>Matches all ul's in the document, like:
+<pre class="highlight html"><span class="nt">&lt;ul&gt;</span>&#x000A;  <span class="nt">&lt;li&gt;</span>Bod Dylan<span class="nt">&lt;/li&gt;</span>&#x000A;  <span class="nt">&lt;li&gt;</span>Mark Knopfler<span class="nt">&lt;/li&gt;</span>&#x000A;<span class="nt">&lt;/ul&gt;</span>&#x000A;</pre><h3>Class selector</h3>
+Declared with a dot followed by the id name
+<pre class="highlight css"><span class="nc">.notes</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;notes&quot;</span><span class="nt">&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre><h3>Id selector</h3>
+Declared with a hash followed by the id name
+<pre class="highlight css"><span class="nf">#song</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;song&quot;</span><span class="nt">&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre><div class='alert alert-info'>
+<b>Note:</b>
+To be used sparingly. Very high specifity.
 </div>
-
+<h3>Descendant Combinator selector</h3>
+Allows you to select descendants of a particular element. First specify the parent, followed
+by a space and the child elements to be selected. They do not need to be direct descendants
+<pre class="highlight css"><span class="nf">#song</span> <span class="nt">ul</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;song&quot;</span><span class="nt">&gt;</span>&#x000A;    <span class="nt">&lt;div&gt;</span>&#x000A;      <span class="nt">&lt;ul&gt;</span>...<span class="nt">&lt;/ul&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre><div class='alert alert-info'>
+<b>Note:</b>
+To be used sparingly. Makes styles difficult to reuse
+</div>
+<h3>Child Combinator selector</h3>
+Allows you to select
+<em>direct descendants</em>
+of a particular element. First specify the parent, followed
+by a greather-than and the child elements to be selected. They do not need to be direct descendants
+<pre class="highlight css"><span class="nf">#song</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;song&quot;</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;ul&gt;</span>...<span class="nt">&lt;/ul&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre><h3>General Sibling Combinator selector</h3>
+Select siblings (at the same level) of an specific element. Use tilde to separate the element whose siblings
+we want to select, and the siblings.
+<pre class="highlight css"><span class="nt">h1</span> <span class="o">~</span> <span class="nt">p</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;h1&gt;</span>Title<span class="nt">&lt;/h1&gt;</span>&#x000A;<span class="nt">&lt;p&gt;</span>Paragraph<span class="nt">&lt;/p&gt;</span>&#x000A;</pre><h3>Adjacent Sibling Combinator selector</h3>
+Select adjacent siblings of an specific element. Use plus to separate the element whose siblings
+we want to select, and the siblings.
+<pre class="highlight css"><span class="nt">h1</span> <span class="o">+</span> <span class="nt">p</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;h1&gt;</span>Title<span class="nt">&lt;/h1&gt;</span>&#x000A;<span class="nt">&lt;p&gt;</span>Paragraph<span class="nt">&lt;/p&gt;</span>&#x000A;</pre><h3>Attribute selector</h3>
+Select elements with a given attribute
+<pre class="highlight css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">&#39;</span><span class="nt">submit</span><span class="err">&#39;</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>&#x000A;</pre><h3>Pseudo class selector</h3>
+<pre class="highlight css"><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre><h3>Pseudo elements selector</h3>
+<pre class="highlight css"><span class="nt">h2</span><span class="nd">:after</span>&#x000A;</pre><h3>Selector chain</h3>
+<pre class="highlight css"><span class="nt">h1</span><span class="nc">.banner</span>&#x000A;</pre><h3>Multiple selectors in a single declaration</h3>
+<pre class="highlight css"><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>&#x000A;</pre>
 </div>
 <script src='javascripts/jquery.js'></script>
 <script src='javascripts/bootstrap.min.js'></script>
-<script src='javascripts/jgestures.js'></script>
 <script src='javascripts/all.js'></script>
 </body>
 </html>
